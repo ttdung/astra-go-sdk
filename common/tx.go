@@ -2,9 +2,9 @@ package common
 
 import (
 	"context"
-	"github.com/AstraProtocol/astra-go-sdk/account"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/tx"
+	"github.com/dungtt-astra/astra-go-sdk/account"
 	"github.com/ethereum/go-ethereum/common"
 
 	"github.com/cosmos/cosmos-sdk/types"

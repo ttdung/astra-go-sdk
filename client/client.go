@@ -2,16 +2,16 @@ package client
 
 import (
 	"fmt"
-	"github.com/AstraProtocol/astra-go-sdk/account"
-	"github.com/AstraProtocol/astra-go-sdk/bank"
-	"github.com/AstraProtocol/astra-go-sdk/channel"
-	"github.com/AstraProtocol/astra-go-sdk/config"
-	"github.com/AstraProtocol/astra-go-sdk/scan"
 	"github.com/AstraProtocol/astra/v2/app"
 	sdkClient "github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/cosmos/cosmos-sdk/types"
 	authTypes "github.com/cosmos/cosmos-sdk/x/auth/types"
+	"github.com/dungtt-astra/astra-go-sdk/account"
+	"github.com/dungtt-astra/astra-go-sdk/bank"
+	"github.com/dungtt-astra/astra-go-sdk/channel"
+	"github.com/dungtt-astra/astra-go-sdk/config"
+	"github.com/dungtt-astra/astra-go-sdk/scan"
 	"github.com/evmos/ethermint/encoding"
 	ethermintTypes "github.com/evmos/ethermint/types"
 )
