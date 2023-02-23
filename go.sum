@@ -42,8 +42,6 @@ github.com/99designs/go-keychain v0.0.0-20191008050251-8e49817e8af4 h1:/vQbFIOMb
 github.com/99designs/go-keychain v0.0.0-20191008050251-8e49817e8af4/go.mod h1:hN7oaIRCjzsZ2dE+yG5k+rsdt3qcwykqK6HVGcKwsw4=
 github.com/99designs/keyring v1.2.1 h1:tYLp1ULvO7i3fI5vE21ReQuj99QFSs7lGm0xWyJo87o=
 github.com/99designs/keyring v1.2.1/go.mod h1:fc+wB5KTk9wQ9sDx0kFXB3A0MaeGHM9AwRStKOQ5vOA=
-github.com/AstraProtocol/astra-go-sdk v0.0.15 h1:AyXyFAS7XQc5zwgLSf3mmG3gDPE3yASG0he270eIVGE=
-github.com/AstraProtocol/astra-go-sdk v0.0.15/go.mod h1:a4Ohye6fcPcYKPE7CUEm6pMepopLMuD3R1D5BPxUNdE=
 github.com/AstraProtocol/channel v0.0.11 h1:q4+88mv2SFSuwagMRbpgOIiK9V3uF/SItu2uDq+geLY=
 github.com/AstraProtocol/channel v0.0.11/go.mod h1:Cj7B2ggFrExFjqDxrXBumndkdcK8+7d1UfjMVwqJZVc=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=

@@ -3,9 +3,9 @@ package scan
 import (
 	"context"
 	"fmt"
-	"github.com/AstraProtocol/astra-go-sdk/bank"
 	"github.com/cosmos/cosmos-sdk/client"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
+	"github.com/dungtt-astra/astra-go-sdk/bank"
 	evmtypes "github.com/evmos/ethermint/x/evm/types"
 	"github.com/pkg/errors"
 	ctypes "github.com/tendermint/tendermint/rpc/core/types"

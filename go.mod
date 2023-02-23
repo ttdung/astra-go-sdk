@@ -3,7 +3,6 @@ module github.com/dungtt-astra/astra-go-sdk
 go 1.18
 
 require (
-	github.com/AstraProtocol/astra-go-sdk v0.0.15
 	github.com/AstraProtocol/astra/v2 v2.0.0-rc
 	github.com/AstraProtocol/channel v0.0.11
 	github.com/cosmos/cosmos-sdk v0.45.11

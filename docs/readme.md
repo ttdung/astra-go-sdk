@@ -20,7 +20,7 @@ See [go.mod](./../go.mod)
 
 ```go
 import (
-github.com/AstraProtocol/astra-go-sdk
+github.com/dungtt-astra/astra-go-sdk
 )
 ```
 

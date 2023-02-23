@@ -3,7 +3,7 @@
 ```go
 import (
     "fmt"
-    "github.com/AstraProtocol/astra-go-sdk/client"
+    "github.com/dungtt-astra/astra-go-sdk/client"
 )
 
 func main() {
