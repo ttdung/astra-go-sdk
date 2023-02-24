@@ -9,7 +9,6 @@ import (
 	"github.com/cosmos/cosmos-sdk/crypto/keys/multisig"
 	cryptoTypes "github.com/cosmos/cosmos-sdk/crypto/types"
 	"github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/go-bip39"
 	"github.com/evmos/ethermint/crypto/ethsecp256k1"
 	ethermintHd "github.com/evmos/ethermint/crypto/hd"
 	ethermintTypes "github.com/evmos/ethermint/types"
@@ -25,7 +24,7 @@ func NewAccount(coinType uint32) *Account {
 	return &Account{coinType: coinType}
 }
 
-func Pubkey(pk string) (*ethsecp256k1.PubKey, error) {
+func importPubkey(pk string) (*ethsecp256k1.PubKey, error) {
 
 	if strings.ContainsAny(pk, "{") {
 		pk = strings.Split(strings.Split(pk, "{")[1], "}")[0]
