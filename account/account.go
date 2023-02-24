@@ -14,7 +14,6 @@ import (
 	ethermintHd "github.com/evmos/ethermint/crypto/hd"
 	ethermintTypes "github.com/evmos/ethermint/types"
 	"github.com/pkg/errors"
-	"strings"
 )
 
 type Account struct {
@@ -23,22 +22,6 @@ type Account struct {
 
 func NewAccount(coinType uint32) *Account {
 	return &Account{coinType: coinType}
-}
-
-func importPubkey(pk string) (*ethsecp256k1.PubKey, error) {
-
-	if strings.ContainsAny(pk, "{") {
-		pk = strings.Split(strings.Split(pk, "{")[1], "}")[0]
-	}
-
-	key, err := hex.DecodeString(pk)
-	if err != nil {
-		return nil, err
-	}
-
-	return &ethsecp256k1.PubKey{
-		Key: key,
-	}, nil
 }
 
 //Create new an Account

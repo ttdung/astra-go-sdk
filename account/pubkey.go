@@ -13,17 +13,19 @@ type PKAccount struct {
 	publicKey ethsecp256k1.PubKey
 }
 
-func NewPKAccount(pubkey string) *PKAccount {
+func NewPKAccount(pubkey string) (*PKAccount, error) {
 	pubkey = strings.Split(strings.Split(pubkey, "{")[1], "}")[0]
+	
 	key, err := hex.DecodeString(pubkey)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
+
 	return &PKAccount{
 		publicKey: ethsecp256k1.PubKey{
 			Key: key,
 		},
-	}
+	}, nil
 }
 
 func (pka *PKAccount) PublicKey() cryptoTypes.PubKey {
