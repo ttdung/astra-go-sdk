@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/AstraProtocol/astra/v2 v2.1.3
-	github.com/AstraProtocol/channel v0.0.11
+	github.com/AstraProtocol/channel v0.0.8
 	github.com/cosmos/cosmos-sdk v0.45.11
 	github.com/cosmos/go-bip39 v1.0.0
 	github.com/ethereum/go-ethereum v1.10.19
@@ -147,9 +147,6 @@ require (
 )
 
 replace (
-github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
-
-// replace github.com/AstraProtocol/channel => /Users/lap02341/resource/AstraProject/channel
-
-github.com/AstraProtocol/astra/v2 => github.com/hoanguyenkh/astra/v2 v2.2.1-rc
+	github.com/AstraProtocol/astra/v2 => github.com/hoanguyenkh/astra/v2 v2.2.1-rc
+	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
 )
