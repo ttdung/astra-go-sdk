@@ -60,9 +60,9 @@ func (t *TxMulSign) PrintUnsignedTx(msgs types.Msg) (string, error) {
 func (t *TxMulSign) prepareSignTx(coinType uint32, pubKey cryptoTypes.PubKey) error {
 	from := types.AccAddress(pubKey.Address())
 
-	if err := t.rpcClient.AccountRetriever.EnsureExists(t.rpcClient, from); err != nil {
-		return errors.Wrap(err, "EnsureExists")
-	}
+	//if err := t.rpcClient.AcEnsurecountRetriever.EnsureExists(t.rpcClient, from); err != nil {
+	//	return errors.Wrap(err, "EnsureExists")
+	//}
 
 	initNum, initSeq := t.txf.AccountNumber(), t.txf.Sequence()
 	if initNum == 0 || initSeq == 0 {
