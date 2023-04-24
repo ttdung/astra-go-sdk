@@ -128,7 +128,8 @@ func (a *Account) ImportPrivateKey(privateKeyStr string) (*PrivateKeySerialized,
 		return NewPrivateKeySerialized("", privateKey), nil
 	}
 
-	return nil, nil
+	privateKey := hd.Secp256k1.Generate()(priv)
+	return NewPrivateKeySerialized("", privateKey), nil
 }
 
 func (a *Account) ImportHdPath(mnemonic, hdPath string) (*PrivateKeySerialized, error) {
