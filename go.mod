@@ -149,4 +149,5 @@ require (
 replace (
 	github.com/AstraProtocol/astra/v2 => github.com/hoanguyenkh/astra/v2 v2.2.1-rc
 	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
+	github.com/AstraProtocol/channel => github.com/dungtt-astra/channel v0.0.3
 )

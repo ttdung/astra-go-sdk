@@ -3,12 +3,12 @@ package channel
 import (
 	"context"
 
-	channelTypes "github.com/AstraProtocol/channel/x/channel/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	cryptoTypes "github.com/cosmos/cosmos-sdk/crypto/types"
 	"github.com/cosmos/cosmos-sdk/types"
 	"github.com/dungtt-astra/astra-go-sdk/account"
 	"github.com/dungtt-astra/astra-go-sdk/common"
+	channelTypes "github.com/dungtt-astra/channel/x/channel/types"
 	"github.com/pkg/errors"
 )
 
