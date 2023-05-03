@@ -8,6 +8,7 @@ import (
 	cryptoTypes "github.com/cosmos/cosmos-sdk/crypto/types"
 	"github.com/dungtt-astra/astra-go-sdk/account"
 	"github.com/ethereum/go-ethereum/common"
+	"log"
 
 	keyMultisig "github.com/cosmos/cosmos-sdk/crypto/keys/multisig"
 	"github.com/cosmos/cosmos-sdk/crypto/types/multisig"
@@ -108,6 +109,7 @@ func (t *TxMulSign) SignTxWithSignerAddress(txBuilder client.TxBuilder, multiSig
 
 	pubKey := t.signerPrivateKey.PublicKey()
 
+	log.Println("SignTxWithSignerAddress:t.txf.Sequence():", t.txf.Sequence())
 	sigV2 := signing.SignatureV2{
 		PubKey: pubKey,
 		Data: &signing.SingleSignatureData{
@@ -161,6 +163,7 @@ func (t *TxMulSign) CreateTxMulSign(txBuilder client.TxBuilder, multiSignAccPubK
 
 	multisigSig := multisig.NewMultisig(len(multisigPub.PubKeys))
 
+	log.Println("CreateTxMulSign:t.txf.Sequence():", t.txf.Sequence())
 	for _, v2s := range signOfSigner {
 		signingData := authSigning.SignerData{
 			ChainID:       t.txf.ChainID(),
