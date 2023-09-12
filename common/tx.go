@@ -11,7 +11,7 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/types/tx/signing"
 	authSigning "github.com/cosmos/cosmos-sdk/x/auth/signing"
-	emvTypes "github.com/evmos/ethermint/x/evm/types"
+	emvTypes "github.com/evmos/evmos/v12/x/evm/types"
 	"github.com/pkg/errors"
 )
 

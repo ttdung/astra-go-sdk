@@ -2,7 +2,6 @@ package client
 
 import (
 	"fmt"
-	"github.com/AstraProtocol/astra/v2/app"
 	sdkClient "github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/cosmos/cosmos-sdk/types"
@@ -12,8 +11,9 @@ import (
 	"github.com/dungtt-astra/astra-go-sdk/channel"
 	"github.com/dungtt-astra/astra-go-sdk/config"
 	"github.com/dungtt-astra/astra-go-sdk/scan"
-	"github.com/evmos/ethermint/encoding"
-	ethermintTypes "github.com/evmos/ethermint/types"
+	"github.com/dungtt-astra/astra/v3/app"
+	"github.com/evmos/evmos/v12/encoding"
+	ethermintTypes "github.com/evmos/evmos/v12/types"
 )
 
 type Client struct {

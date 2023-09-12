@@ -8,7 +8,7 @@ import (
 	cryptoTypes "github.com/cosmos/cosmos-sdk/crypto/types"
 	"github.com/cosmos/cosmos-sdk/types"
 	"github.com/ethereum/go-ethereum/common"
-	ethermintTypes "github.com/evmos/ethermint/types"
+	ethermintTypes "github.com/evmos/evmos/v12/types"
 	"github.com/pkg/errors"
 )
 

@@ -6,7 +6,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/client"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	"github.com/dungtt-astra/astra-go-sdk/bank"
-	evmtypes "github.com/evmos/ethermint/x/evm/types"
+	evmtypes "github.com/evmos/evmos/v12/x/evm/types"
 	"github.com/pkg/errors"
 	ctypes "github.com/tendermint/tendermint/rpc/core/types"
 	"github.com/tendermint/tendermint/types"

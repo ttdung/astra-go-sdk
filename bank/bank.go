@@ -12,7 +12,7 @@ import (
 	"github.com/dungtt-astra/astra-go-sdk/common"
 	ethCommon "github.com/ethereum/go-ethereum/common"
 	ethTypes "github.com/ethereum/go-ethereum/core/types"
-	emvTypes "github.com/evmos/ethermint/x/evm/types"
+	emvTypes "github.com/evmos/evmos/v12/x/evm/types"
 	"github.com/pkg/errors"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"

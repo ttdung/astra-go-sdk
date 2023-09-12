@@ -10,7 +10,6 @@ import (
 	"sync"
 	"testing"
 
-	channelTypes "github.com/AstraProtocol/channel/x/channel/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/types"
 	signingTypes "github.com/cosmos/cosmos-sdk/types/tx/signing"
@@ -18,6 +17,7 @@ import (
 	"github.com/dungtt-astra/astra-go-sdk/channel"
 	"github.com/dungtt-astra/astra-go-sdk/common"
 	"github.com/dungtt-astra/astra-go-sdk/config"
+	channelTypes "github.com/dungtt-astra/astra/v3/x/channel/types"
 	ethCommon "github.com/ethereum/go-ethereum/common"
 	"github.com/joho/godotenv"
 	"github.com/stretchr/testify/assert"

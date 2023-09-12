@@ -9,10 +9,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/crypto/keys/multisig"
 	cryptoTypes "github.com/cosmos/cosmos-sdk/crypto/types"
 	"github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/go-bip39"
-	"github.com/evmos/ethermint/crypto/ethsecp256k1"
-	ethermintHd "github.com/evmos/ethermint/crypto/hd"
-	ethermintTypes "github.com/evmos/ethermint/types"
+	"github.com/evmos/evmos/v12/crypto/ethsecp256k1"
+	ethermintHd "github.com/evmos/evmos/v12/crypto/hd"
+	ethermintTypes "github.com/evmos/evmos/v12/types"
 	"github.com/pkg/errors"
 )
 

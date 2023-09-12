@@ -1,15 +1,15 @@
 package channel
 
 import (
-	"context"
 	"log"
 
+	//channelTypes "github.com/AstraProtocol/astra/channel/x/channel/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	cryptoTypes "github.com/cosmos/cosmos-sdk/crypto/types"
 	"github.com/cosmos/cosmos-sdk/types"
 	"github.com/dungtt-astra/astra-go-sdk/account"
 	"github.com/dungtt-astra/astra-go-sdk/common"
-	channelTypes "github.com/dungtt-astra/channel/x/channel/types"
+	//github.com/AstraProtocol/astra/channel/x/channel
 	"github.com/pkg/errors"
 )
 
@@ -91,7 +91,7 @@ func (cn *Channel) SignCommitmentMultisigMsg(req SignMsgRequest,
 	return sign, nil
 }
 
-func (cn *Channel) ListChannel() (*channelTypes.QueryAllChannelResponse, error) {
-	channelClient := channelTypes.NewQueryClient(cn.rpcClient)
-	return channelClient.ChannelAll(context.Background(), &channelTypes.QueryAllChannelRequest{})
-}
+//func (cn *Channel) ListChannel() (*channelTypes.QueryAllChannelResponse, error) {
+//	channelClient := channelTypes.NewQueryClient(cn.rpcClient)
+//	return channelClient.ChannelAll(context.Background(), &channelTypes.QueryAllChannelRequest{})
+//}
