@@ -5,14 +5,12 @@ import (
 	"fmt"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/tx"
-	cryptoTypes "github.com/cosmos/cosmos-sdk/crypto/types"
-	"github.com/dungtt-astra/astra-go-sdk/account"
-	"github.com/ethereum/go-ethereum/common"
-	"log"
-
 	keyMultisig "github.com/cosmos/cosmos-sdk/crypto/keys/multisig"
+	cryptoTypes "github.com/cosmos/cosmos-sdk/crypto/types"
 	"github.com/cosmos/cosmos-sdk/crypto/types/multisig"
 	"github.com/cosmos/cosmos-sdk/types"
+	"github.com/dungtt-astra/astra-go-sdk/account"
+	"github.com/ethereum/go-ethereum/common"
 
 	"github.com/cosmos/cosmos-sdk/types/tx/signing"
 	authSigning "github.com/cosmos/cosmos-sdk/x/auth/signing"
@@ -109,7 +107,6 @@ func (t *TxMulSign) SignTxWithSignerAddress(txBuilder client.TxBuilder, multiSig
 
 	pubKey := t.signerPrivateKey.PublicKey()
 
-	log.Println("SignTxWithSignerAddress:t.txf.Sequence():", t.txf.Sequence())
 	sigV2 := signing.SignatureV2{
 		PubKey: pubKey,
 		Data: &signing.SingleSignatureData{
@@ -125,6 +122,7 @@ func (t *TxMulSign) SignTxWithSignerAddress(txBuilder client.TxBuilder, multiSig
 
 	// Construct the SignatureV2 struct
 	signerData := authSigning.SignerData{
+		Address:       accMultiSignAddr.String(), // t.signerPrivateKey.AccAddress().String(),
 		ChainID:       t.rpcClient.ChainID,
 		AccountNumber: t.txf.AccountNumber(),
 		Sequence:      t.txf.Sequence(),
@@ -161,11 +159,13 @@ func (t *TxMulSign) CreateTxMulSign(txBuilder client.TxBuilder, multiSignAccPubK
 		return errors.Wrap(errors.New("set type error"), "LegacyAminoPubKey")
 	}
 
+	multisigAddr := types.AccAddress(multisigPub.Address())
+
 	multisigSig := multisig.NewMultisig(len(multisigPub.PubKeys))
 
-	log.Println("CreateTxMulSign:t.txf.Sequence():", t.txf.Sequence())
 	for _, v2s := range signOfSigner {
 		signingData := authSigning.SignerData{
+			Address:       multisigAddr.String(),
 			ChainID:       t.txf.ChainID(),
 			AccountNumber: t.txf.AccountNumber(),
 			Sequence:      t.txf.Sequence(),

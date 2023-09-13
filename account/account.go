@@ -9,10 +9,13 @@ import (
 	"github.com/cosmos/cosmos-sdk/crypto/keys/multisig"
 	cryptoTypes "github.com/cosmos/cosmos-sdk/crypto/types"
 	"github.com/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/go-bip39"
 	"github.com/evmos/evmos/v12/crypto/ethsecp256k1"
 	ethermintHd "github.com/evmos/evmos/v12/crypto/hd"
 	ethermintTypes "github.com/evmos/evmos/v12/types"
 	"github.com/pkg/errors"
+	"sort"
+	"strings"
 )
 
 type Account struct {
@@ -51,6 +54,11 @@ func (a *Account) CreateMulSignAccountFromTwoAccount(account1, account2 cryptoTy
 	pks := make([]cryptoTypes.PubKey, 2)
 	pks[0] = account1
 	pks[1] = account2
+
+	sort.Slice(pks, func(i, j int) bool {
+		return strings.Compare(pks[i].String(), pks[j].String()) < 0
+	})
+
 	pk := multisig.NewLegacyAminoPubKey(threshold, pks)
 	addr := types.AccAddress(pk.Address())
 	return addr.String(), pk, nil

@@ -71,6 +71,9 @@ func (cn *Channel) SignCommitmentMultisigMsg(req SignMsgRequest,
 		return "", errors.Wrap(err, "GetAccountNumberSequence")
 	}
 
+	log.Printf("SignCommitmentMultisigMsg: req %v \n", req)
+	log.Printf("SignCommitmentMultisigMsg: sign with acc %v \n", account.AccAddress().String())
+	log.Printf("SignCommitmentMultisigMsg: multiSigPubkey %v \n", multiSigPubkey.Address())
 	log.Printf("SignCommitmentMultisigMsg: accNum %v, accSeq+1 %v, \n", accNum, accSeq+1)
 	newTx := common.NewTxMulSign(cn.rpcClient, account, req.GasLimit, req.GasPrice, accSeq+1, accNum)
 	txBuilder, err := newTx.BuildUnsignedTx(req.Msg)
