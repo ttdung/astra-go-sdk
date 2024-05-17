@@ -4,8 +4,8 @@ import (
 	"context"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/tx"
-	"github.com/dungtt-astra/astra-go-sdk/account"
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/ttdung/astra-go-sdk/account"
 
 	"github.com/cosmos/cosmos-sdk/types"
 

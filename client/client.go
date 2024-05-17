@@ -7,13 +7,13 @@ import (
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/cosmos/cosmos-sdk/types"
 	authTypes "github.com/cosmos/cosmos-sdk/x/auth/types"
-	"github.com/dungtt-astra/astra-go-sdk/account"
-	"github.com/dungtt-astra/astra-go-sdk/bank"
-	"github.com/dungtt-astra/astra-go-sdk/channel"
-	"github.com/dungtt-astra/astra-go-sdk/config"
-	"github.com/dungtt-astra/astra-go-sdk/scan"
 	"github.com/evmos/ethermint/encoding"
 	ethermintTypes "github.com/evmos/ethermint/types"
+	"github.com/ttdung/astra-go-sdk/account"
+	"github.com/ttdung/astra-go-sdk/bank"
+	"github.com/ttdung/astra-go-sdk/channel"
+	"github.com/ttdung/astra-go-sdk/config"
+	"github.com/ttdung/astra-go-sdk/scan"
 )
 
 type Client struct {

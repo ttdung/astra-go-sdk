@@ -72,8 +72,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/dungtt-astra/astra-go-sdk/client"
-	"github.com/dungtt-astra/astra-go-sdk/config"
+	"github.com/ttdung/astra-go-sdk/client"
+	"github.com/ttdung/astra-go-sdk/config"
 )
 
 func main() {

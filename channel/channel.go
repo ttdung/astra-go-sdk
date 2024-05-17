@@ -7,9 +7,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/client"
 	cryptoTypes "github.com/cosmos/cosmos-sdk/crypto/types"
 	"github.com/cosmos/cosmos-sdk/types"
-	"github.com/dungtt-astra/astra-go-sdk/account"
-	"github.com/dungtt-astra/astra-go-sdk/common"
 	"github.com/pkg/errors"
+	"github.com/ttdung/astra-go-sdk/account"
+	"github.com/ttdung/astra-go-sdk/common"
 )
 
 type Channel struct {

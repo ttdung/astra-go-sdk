@@ -6,8 +6,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/tx"
 	cryptoTypes "github.com/cosmos/cosmos-sdk/crypto/types"
-	"github.com/dungtt-astra/astra-go-sdk/account"
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/ttdung/astra-go-sdk/account"
 
 	keyMultisig "github.com/cosmos/cosmos-sdk/crypto/keys/multisig"
 	"github.com/cosmos/cosmos-sdk/crypto/types/multisig"

@@ -1,4 +1,4 @@
-module github.com/dungtt-astra/astra-go-sdk
+module github.com/ttdung/astra-go-sdk
 
 go 1.18
 

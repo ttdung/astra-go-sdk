@@ -14,14 +14,14 @@ import (
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/types"
 	signingTypes "github.com/cosmos/cosmos-sdk/types/tx/signing"
-	"github.com/dungtt-astra/astra-go-sdk/bank"
-	"github.com/dungtt-astra/astra-go-sdk/channel"
-	"github.com/dungtt-astra/astra-go-sdk/common"
-	"github.com/dungtt-astra/astra-go-sdk/config"
 	ethCommon "github.com/ethereum/go-ethereum/common"
 	"github.com/joho/godotenv"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
+	"github.com/ttdung/astra-go-sdk/bank"
+	"github.com/ttdung/astra-go-sdk/channel"
+	"github.com/ttdung/astra-go-sdk/common"
+	"github.com/ttdung/astra-go-sdk/config"
 )
 
 type AstraSdkTestSuite struct {
