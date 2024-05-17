@@ -2,7 +2,9 @@ package client
 
 import (
 	"fmt"
-	"github.com/AstraProtocol/astra/v2/app"
+	"github.com/evmos/ethermint/app"
+
+	//"github.com/AstraProtocol/astra/v2/app"
 	sdkClient "github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/cosmos/cosmos-sdk/types"
@@ -75,7 +77,7 @@ func (c *Client) Init(cfg *config.Config) {
 	rpcClient = rpcClient.
 		WithClient(rpcHttp).
 		//WithNodeURI(c.endpoint).
-		WithCodec(encodingConfig.Marshaler).
+		WithCodec(encodingConfig.Codec).
 		WithInterfaceRegistry(encodingConfig.InterfaceRegistry).
 		WithTxConfig(encodingConfig.TxConfig).
 		WithLegacyAmino(encodingConfig.Amino).

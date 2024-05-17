@@ -3,13 +3,13 @@ package channel
 import (
 	"context"
 
-	channelTypes "github.com/AstraProtocol/channel/x/channel/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	cryptoTypes "github.com/cosmos/cosmos-sdk/crypto/types"
 	"github.com/cosmos/cosmos-sdk/types"
 	"github.com/pkg/errors"
 	"github.com/ttdung/astra-go-sdk/account"
 	"github.com/ttdung/astra-go-sdk/common"
+	channelTypes "github.com/ttdung/channel_v0.46/x/channel/types"
 )
 
 type Channel struct {

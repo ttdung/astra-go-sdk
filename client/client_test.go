@@ -10,7 +10,6 @@ import (
 	"sync"
 	"testing"
 
-	channelTypes "github.com/AstraProtocol/channel/x/channel/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/types"
 	signingTypes "github.com/cosmos/cosmos-sdk/types/tx/signing"
@@ -22,6 +21,7 @@ import (
 	"github.com/ttdung/astra-go-sdk/channel"
 	"github.com/ttdung/astra-go-sdk/common"
 	"github.com/ttdung/astra-go-sdk/config"
+	channelTypes "github.com/ttdung/channel_v0.46/x/channel/types"
 )
 
 type AstraSdkTestSuite struct {
