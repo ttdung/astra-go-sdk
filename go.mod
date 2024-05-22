@@ -3,7 +3,6 @@ module github.com/ttdung/astra-go-sdk
 go 1.18
 
 require (
-	//github.com/cosmos/cosmos-sdk v0.46.13
 	github.com/cosmos/go-bip39 v1.0.0
 	github.com/evmos/ethermint v0.22.0
 	github.com/joho/godotenv v1.4.0

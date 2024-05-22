@@ -113,6 +113,7 @@ func (t *Tx) SignTx(txBuilder client.TxBuilder) error {
 
 	// Construct the SignatureV2 struct
 	signerData := authSigning.SignerData{
+		Address:       t.privateKey.AccAddress().String(),
 		ChainID:       t.rpcClient.ChainID,
 		AccountNumber: t.txf.AccountNumber(),
 		Sequence:      t.txf.Sequence(),

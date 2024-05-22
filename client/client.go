@@ -38,7 +38,7 @@ func NewClient(cfg *config.Config) *Client {
 func (c *Client) Init(cfg *config.Config) {
 	c.coinType = cfg.CoinType
 	c.prefixAddress = cfg.PrefixAddress
-	c.tokenSymbol = cfg.TokenSymbol
+	c.tokenSymbol = cfg.TokenSymbol[0]
 
 	sdkConfig := types.GetConfig()
 	sdkConfig.SetPurpose(44)

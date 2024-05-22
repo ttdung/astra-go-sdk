@@ -123,6 +123,7 @@ func (t *TxMulSign) SignTxWithSignerAddress(txBuilder client.TxBuilder, multiSig
 
 	// Construct the SignatureV2 struct
 	signerData := authSigning.SignerData{
+		Address:       multiSignAccPubKey.Address().String(),
 		ChainID:       t.rpcClient.ChainID,
 		AccountNumber: t.txf.AccountNumber(),
 		Sequence:      t.txf.Sequence(),
@@ -163,6 +164,7 @@ func (t *TxMulSign) CreateTxMulSign(txBuilder client.TxBuilder, multiSignAccPubK
 
 	for _, v2s := range signOfSigner {
 		signingData := authSigning.SignerData{
+			Address:       multiSignAccPubKey.Address().String(),
 			ChainID:       t.txf.ChainID(),
 			AccountNumber: t.txf.AccountNumber(),
 			Sequence:      t.txf.Sequence(),

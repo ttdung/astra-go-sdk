@@ -6,7 +6,6 @@ import (
 	"log"
 	"math"
 	"math/big"
-	"os"
 	"sync"
 	"testing"
 
@@ -35,13 +34,30 @@ func (suite *AstraSdkTestSuite) SetupTest() {
 		log.Fatalf("Error loading .env file")
 	}
 
-	cfg := &config.Config{
-		ChainId:       os.Getenv("CHAIN_ID"),
-		Endpoint:      os.Getenv("END_POINT"),
-		CoinType:      60,
-		PrefixAddress: "astra",
-		TokenSymbol:   "aastra",
+	var cfg = &config.Config{
+		ChainId:       "channel_v0.46",
+		Endpoint:      "http://localhost:26657",
+		CoinType:      118,
+		PrefixAddress: "cosmos",
+		TokenSymbol:   []string{"stake"},
 	}
+	//var cfg = &config.Config{
+	//	ChainId:       "channel_v0.46",
+	//	Endpoint:      "http://localhost:26657",
+	//	CoinType:      common.COINTYPE,
+	//	PrefixAddress: "cosmos",
+	//	TokenSymbol:   []string{"stake"},
+	//	NodeAddr:      ":50005",
+	//	Tcp:           "tcp",
+	//}
+
+	//cfg := &config.Config{
+	//	ChainId:       os.Getenv("CHAIN_ID"),
+	//	Endpoint:      os.Getenv("END_POINT"),
+	//	CoinType:      60,
+	//	PrefixAddress: "astra",
+	//	TokenSymbol:   "aastra",
+	//}
 
 	client := NewClient(cfg)
 	suite.Client = client
@@ -490,11 +506,11 @@ func (suite *AstraSdkTestSuite) TestConvertToDecimal() {
 func (suite *AstraSdkTestSuite) TestOpenChannel() {
 	channelClient := suite.Client.NewChannelClient()
 	acc := suite.Client.NewAccountClient()
-	account1, err := acc.ImportAccount("gadget final blue appear hero retire wild account message social health hobby decade neglect common egg cruel certain phrase myself alert enlist brother sure")
+	account1, err := acc.ImportAccount("rich cost ordinary claim citizen battle expose popular glad enlist hint knock load across blade portion chaos type slush online memory hunt drama clarify")
 	if err != nil {
 		panic(err)
 	}
-	account2, err := acc.ImportAccount("salute debate real reject wreck topple derive night height job range enrich juice develop crush install method always vacant napkin blush beyond hedgehog tortoise")
+	account2, err := acc.ImportAccount("plastic teach expect wolf kit misery quarter episode wide begin season flip medal ginger item vague repeat super deputy dad shoe bright dry core")
 	if err != nil {
 		panic(err)
 	}
@@ -518,37 +534,44 @@ func (suite *AstraSdkTestSuite) TestOpenChannel() {
 
 	fmt.Println("deposit amount", amount.String())
 	request1 := &bank.TransferRequest{
-		PrivateKey: "gadget final blue appear hero retire wild account message social health hobby decade neglect common egg cruel certain phrase myself alert enlist brother sure",
+		PrivateKey: "rich cost ordinary claim citizen battle expose popular glad enlist hint knock load across blade portion chaos type slush online memory hunt drama clarify",
 		Receiver:   multisigAddr,
 		Amount:     amount,
 		GasLimit:   200000,
-		GasPrice:   "0.001aastra",
+		GasPrice:   "0.001stake",
 	}
 
 	txResult1, err := bankClient.TransferRawDataAndBroadcast(request1)
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("tx transfer result code", txResult1.Code)
+	fmt.Println("tx deposit result code: ", txResult1.Code)
 
+	//var coin []*types.Coin
+	//coin = append(coin, &types.Coin{
+	//	Denom:  "stake",
+	//	Amount: types.NewInt(1),
+	//})
 	openChannelRequest := channel.SignMsgRequest{
-		Msg: &channelTypes.MsgOpenChannel{
+		Msg: &channelTypes.MsgOpenchannel{
 			Creator: multisigAddr,
 			PartA:   account1.AccAddress().String(),
 			PartB:   account2.AccAddress().String(),
-			CoinA: &types.Coin{
-				Denom:  "astra",
+			//CoinA:   coin,
+			//CoinB:   coin,
+			CoinA: []*types.Coin{{
+				Denom:  "stake",
 				Amount: types.NewInt(1),
-			},
-			CoinB: &types.Coin{
-				Denom:  "astra",
+			}},
+			CoinB: []*types.Coin{{
+				Denom:  "stake",
 				Amount: types.NewInt(1),
-			},
+			}},
 			MultisigAddr: multisigAddr,
 			Sequence:     "8",
 		},
 		GasLimit: 200000,
-		GasPrice: "0.001aastra",
+		GasPrice: "0.001stake",
 	}
 
 	signList := make([][]signingTypes.SignatureV2, 0)
